@@ -14,7 +14,7 @@ namespace AuthService.Infrastructure.RabbitMQ
         {
             var factory = new ConnectionFactory()
             {
-                Uri = new System.Uri("amqp://guest:guest@localhost:5672/")
+                Uri = new System.Uri("amqp://guest:guest@rabbitmq:5672/")
             };
 
             _connection = factory.CreateConnection();
