@@ -11,11 +11,15 @@ builder.Services.AddDbContext<InventoryDbContext>(options =>
 
 // Add repositories
 builder.Services.AddScoped<IAssetRepository, AssetRepository>();
+builder.Services.AddScoped<ITransactionRepository, AssetTransactionRepository>();
+
 
 // Add controllers
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
 
 var app = builder.Build();
 

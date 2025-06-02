@@ -8,7 +8,7 @@ namespace InventoryService.Infrastructure.Persistence
         public InventoryDbContext(DbContextOptions<InventoryDbContext> options) : base(options) { }
 
         public DbSet<Asset> Assets => Set<Asset>();
-        public DbSet<AssetTransaction> AssetTransactions => Set<AssetTransaction>();
+        public DbSet<AssetTransaction> AssetTransactions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -4,11 +4,11 @@ namespace InventoryService.Domain.Entities
     {
         public int Id { get; set; }
         public int AssetId { get; set; }
-        public Asset Asset { get; set; } = null!;
-        public int UserId { get; set; }
-        public DateTime CheckoutDate { get; set; } = DateTime.UtcNow;
-        public DateTime? ReturnDate { get; set; }
+        public string UserId { get; set; } = string.Empty;
+        public string TransactionType { get; set; } = string.Empty; // "Checkout" or "Return"
+        public DateTime Timestamp { get; set; }
 
-        public bool IsReturned => ReturnDate.HasValue;
+        // Navigation property
+        public Asset? Asset { get; set; }
     }
 }
