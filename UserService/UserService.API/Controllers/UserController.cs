@@ -31,35 +31,35 @@ namespace UserService.API.Controllers
             return Ok(user);
         }
 
-        [HttpPost]
-        public async Task<ActionResult> Create(User user)
-        {
-            await _repository.AddAsync(user);
-            return CreatedAtAction(nameof(Get), new { id = user.Id }, user);
-        }
+        //[HttpPost]
+        //public async Task<ActionResult> Create(User user)
+        //{
+        //    await _repository.AddAsync(user);
+        //    return CreatedAtAction(nameof(Get), new { id = user.Id }, user);
+        //}
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult> Update(int id, User updatedUser)
-        {
-            if (id != updatedUser.Id) return BadRequest();
+        //[HttpPut("{id}")]
+        //public async Task<ActionResult> Update(int id, User updatedUser)
+        //{
+        //    if (id != updatedUser.Id) return BadRequest();
 
-            var user = await _repository.GetByIdAsync(id);
-            if (user == null) return NotFound();
+        //    var user = await _repository.GetByIdAsync(id);
+        //    if (user == null) return NotFound();
 
-            user.Username = updatedUser.Username;
+        //    user.Username = updatedUser.Username;
            
-            await _repository.UpdateAsync(user);
-            return NoContent();
-        }
+        //    await _repository.UpdateAsync(user);
+        //    return NoContent();
+        //}
 
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int id)
-        {
-            var user = await _repository.GetByIdAsync(id);
-            if (user == null) return NotFound();
+        //[HttpDelete("{id}")]
+        //public async Task<ActionResult> Delete(int id)
+        //{
+        //    var user = await _repository.GetByIdAsync(id);
+        //    if (user == null) return NotFound();
 
-            await _repository.DeleteAsync(id);
-            return NoContent();
-        }
+        //    await _repository.DeleteAsync(id);
+        //    return NoContent();
+        //}
     }
 }
