@@ -30,8 +30,6 @@ if (app.Environment.IsDevelopment())
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "Inventory API V1");
 
-        // Remove or comment this out to use default /swagger path
-        // c.RoutePrefix = string.Empty;
     });
 }
 
