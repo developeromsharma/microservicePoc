@@ -1,0 +1,42 @@
+﻿## Build Results
+bin/
+obj/
+
+## Rider, VSCode, VS
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## ASP.NET secrets & user files
+*.dbmdl
+*.log
+*.njsproj.user
+*.ntvs_analysis.dat
+*.vspscc
+*.vssscc
+*.pidb
+*.psess
+*.vsp
+*.vspx
+*.vs/
+.env
+.env.*
+
+## Backup & OS files
+*.bak
+*.tmp
+*.swp
+*.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+## Docker (optional)
+**/docker-compose.override.yml
+
+## Logs
+*.log
+logs/
