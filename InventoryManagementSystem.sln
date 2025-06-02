@@ -24,6 +24,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryService.Infrastructure", "InventoryService\InventoryService.Infrastructure\InventoryService.Infrastructure.csproj", "{B851A79A-B031-42A7-ADD5-98DCB1981CA6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserService", "UserService", "{C0127DB6-3CA8-EE98-7726-A4993E48C5D4}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile.txt = Dockerfile.txt
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.API", "UserService\UserService.API\UserService.API.csproj", "{67FAE9C3-95FA-47CD-8E61-EADE63B0FF7C}"
 EndProject
@@ -204,5 +207,8 @@ Global
 		{6B846428-6C55-49A0-BB36-8EABE4D7C6A9} = {C0127DB6-3CA8-EE98-7726-A4993E48C5D4}
 		{564AA698-3665-4B97-B840-AD4DF6883644} = {C0127DB6-3CA8-EE98-7726-A4993E48C5D4}
 		{11959405-F8B5-49B5-9890-100088CE4456} = {C0127DB6-3CA8-EE98-7726-A4993E48C5D4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A5F0D96-3284-4E10-BDDD-D4B0BD331985}
 	EndGlobalSection
 EndGlobal
