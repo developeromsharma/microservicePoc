@@ -1,0 +1,42 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"      # RabbitMQ broker port
+      - "15672:15672"    # RabbitMQ management UI port
+
+  user-service:
+    build:
+      context: ./UserService
+      dockerfile: Dockerfile
+    ports:
+      - "7247:7247"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - rabbitmq
+
+  inventory-service:
+    build:
+      context: ./InventoryService
+      dockerfile: Dockerfile
+    ports:
+      - "7060:7060"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - rabbitmq
+
+  auth-service:
+    build:
+      context: ./AuthService
+      dockerfile: Dockerfile
+    ports:
+      - "7270:7270"   # Change if your Auth Service uses a different port
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - RABBITMQ__URI=amqp://guest:guest@rabbitmq:5672/
+    depends_on:
+      - rabbitmq
+      - user-service
+      - inventory-service
