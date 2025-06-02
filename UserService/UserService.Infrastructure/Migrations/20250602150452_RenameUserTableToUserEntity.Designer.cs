@@ -11,8 +11,8 @@ using UserService.Infrastructure.Persistence;
 namespace UserService.Infrastructure.Migrations
 {
     [DbContext(typeof(UserDbContext))]
-    [Migration("20250602141148_YourMigrationName")]
-    partial class YourMigrationName
+    [Migration("20250602150452_RenameUserTableToUserEntity")]
+    partial class RenameUserTableToUserEntity
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,7 +41,7 @@ namespace UserService.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("UserEntity");
                 });
 #pragma warning restore 612, 618
         }

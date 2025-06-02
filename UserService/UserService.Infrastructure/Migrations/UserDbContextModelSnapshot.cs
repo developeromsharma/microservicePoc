@@ -38,7 +38,7 @@ namespace UserService.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("UserEntity");
                 });
 #pragma warning restore 612, 618
         }
